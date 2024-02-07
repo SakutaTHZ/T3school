@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+</head>
+
+<body>
+    <nav>
+        <h3>Training Time</h3>
+        <ul class="navs">
+            <li>
+                <a href="#">Home</a>
+            </li>
+            <li>
+                <a href="#">HTML
+                    <span class="material-symbols-outlined">
+                        arrow_drop_down
+                    </span>
+                </a>
+                <div class="topic topicOpen HTMLTopics">
+                    <a href="#">Links</a>
+                    <a href="#">Lists</a>
+                    <a href="#">Tables</a>
+                    <a href="#">Styles & Semantics</a>
+                    <a href="#">Audio & Video</a>
+                    <a href="#">Forms & input</a>
+                </div>
+            </li>
+            <li>
+                <a href="#">CSS
+                    <span class="material-symbols-outlined">
+                        arrow_drop_down
+                    </span>
+                </a>
+                <div class="topic CSSTopics">
+                    <a href="#">CSS blocks</a>
+                    <a href="#">Styling Text</a>
+                    <a href="#">CSS Layout</a>
+                </div>
+            </li>
+            <li>
+                <a href="#">Boostrap
+                    <span class="material-symbols-outlined">
+                        arrow_drop_down
+                    </span>
+                </a>
+                <div class="topic BoostrapTopics">
+                    <a href="#">Forms</a>
+                    <a href="#">Customize</a>
+                    <a href="#">Helpers</a>
+                    <a href="#">API</a>
+                </div>
+            </li>
+            <li>
+                <a href="#">JavaScript
+                    <span class="material-symbols-outlined">
+                        arrow_drop_down
+                    </span>
+                </a>
+                <div class="topic JavaScriptTopics">
+                    <a href="#">Document</a>
+                    <a href="#">Event</a>
+                    <a href="#">Froms,Controls</a>
+                    <a href="#">resource loading</a>
+                    <a href="#">Miscellaneous</a>
+                    <a href="#">Frames & windows</a>
+                    <a href="#">Binary data/File</a>
+                    <a href="#">Network requests</a>
+                    <a href="#">Store data</a>
+                    <a href="#">Web components</a>
+                </div>
+            </li>
+            <li>
+                <a href="#">JQuery
+                    <span class="material-symbols-outlined">
+                        arrow_drop_down
+                    </span>
+                </a>
+                <div class="topic JQueryTopics">
+                    <a href="#">Event</a>
+                    <a href="#">Plugins</a>
+                    <a href="#">Code Organization</a>
+                    <a href="#">JQuery UI</a>
+                </div>
+            </li>
+            <li>
+                <a href="#">PHP
+                    <span class="material-symbols-outlined">
+                        arrow_drop_down
+                    </span>
+                </a>
+                <div class="topic PHPTopics">
+                    <a href="#">PHP OOP</a>
+                    <a href="#">Mysql Database</a>
+                    <a href="#">PHP XML</a>
+                    <a href="#">PHP examples</a>
+                    <a href="#">PHP references</a>
+                </div>
+            </li>
+            <li>
+                <a href="#">Apache</a>
+            </li>
+            <div class="theme-switch-container">
+                <label class="switch">
+                    <input type="checkbox" id="themeSwitch">
+                    <span class="slider round"></span>
+                </label>
+            </div>
+        </ul>
+    </nav>
+
+    <section class="homeSection">
+        <div class="hamburger">
+            <a href="#">Home</a> <span>></span> <a href="#">...</a>
+        </div>
+        <div class="sectionContent">
+            <h1>&lt;a&gt;&lt;/a&gt; link tag</h1>
+
+            <div class="codeblock">
+                &lt;<span class="tag">a</span> <span class="attribute">href</span>=<span
+                    class="value">"https://www.banana.com"</span>&gt;Visit Banana Kingdom!&lt;/<span
+                    class="tag">a</span>&gt;
+                <div class="result">
+                    <a href="https://www.banana.com">Visit Banana Kingdom!</a>
+                </div>
+            </div>
+
+            <div class="explanation">
+                <p class="explanationTitle">Definition and Usage</p>
+                <p>
+                    The <a> tag defines a hyperlink, which is used to link from one page to another.<br>
+
+                        The most important attribute of the <a> element is the href attribute, which indicates the
+                            link's destination.<br>
+
+                            By default, links will appear as follows in all browsers:
+                </p>
+
+                <ul>
+                    <li>An unvisited link is underlined and blue</li>
+                    <li>A visited link is underlined and purple</li>
+                    <li> An active link is underlined and red</li>
+                </ul>
+            </div>
+
+            <div class="codeblock">
+                <p class="comment">/* a tag with all of its attributes*/</p>
+                &lt;<span class="tag">a</span>
+                <span class="attribute">href</span>=<span class="value">"https://www.banana.com"</span>
+                <span class="attribute">target</span>=<span class="value">"_blank"</span>
+                <span class="attribute">title</span>=<span class="value">"Visit Example.com"</span>
+                <span class="attribute">style</span>=<span class="value">"color: #0066cc; text-decoration: none;
+                    font-weight: bold;"</span>
+                <span class="attribute">tableindex</span>=<span class="value">"1"</span>
+                <span class="attribute">role</span>=<span class="value">"link"</span>
+                <span class="attribute">aria-label</span>=<span class="value">"Visit Example.com"</span>>
+                Click me to visit Banana Kingdom
+                &lt;/<span class="tag">a</span>>
+                <div class="result">
+                    <a href="https://www.banana.com" target="_blank" title="Visit Example.com" style="color: #0066cc; text-decoration: none; font-weight: bold;" tableindex="1" role="link" aria-label="Visit Example.com"> Click me to visit Banana Kingdom </a>
+                </div>
+            </div>
+            <br>
+            <hr>
+
+            <h1>Attributes in &lt;a&gt;&lt;/a&gt;</h1><br>
+            <h4>
+                🔴 Download
+            </h4>
+            <div class="codeblock">
+                <p class="comment">/* a tag with download attribute*/</p>
+                &lt;<span class="tag">a</span>
+                <span class="attribute">href</span>=<span
+                    class="value">"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2F07D4xMFHzrrKjKEDk6IFQ-p_PEbpjLE3L6dHagX7A&s"</span>
+                <span class="attribute">download</span>>
+                Click me to download banana pics
+                &lt;/<span class="tag">a</span>>
+                <div class="result">
+                    <a href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2F07D4xMFHzrrKjKEDk6IFQ-p_PEbpjLE3L6dHagX7A&s" download> Click me to download banana pics </a>
+                </div>
+            </div>
+            <div class="explanation">
+                The download attribute specifies that the target (the file specified in the href attribute) will be
+                downloaded when a user clicks on the hyperlink.<br>
+                The optional value of the download attribute will be the new name of the file after it is downloaded.
+                There are no restrictions on allowed values, and the browser will automatically detect the correct file
+                extension and add it to the file (.img, .pdf, .txt, .html, etc.).<br>
+                If the value is omitted, the original filename is used.
+            </div>
+            <div class="codeblock">
+                &lt;<span class="tag">a</span>
+                <span class="attribute">href</span>=<span class="value">"/banana.img"</span>
+                <span class="attribute">download</span>=<span class="value">"notbanana"</span>
+                >
+                Click me to download banana pics
+                &lt;/<span class="tag">a</span>>
+                <div class="result">
+                    <a href="/banana.img" download="notbanana" > Click me to download banana pics </a>
+                </div>
+            </div>
+            
+        </div>
+    </section>
+    <!-- scripts -->
+    <script src="main.js"></script>
+</body>
+
+</html>
