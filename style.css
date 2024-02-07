@@ -23,7 +23,7 @@ body {
     overflow: hidden;
 }
 
-nav {
+nav{
     position: fixed;
     inset: 0;
     width: 200px;
@@ -35,6 +35,58 @@ nav {
     align-items: center;
 
     z-index: 10;
+    transition: 0.5s ease-in-out;
+}
+nav>*{
+    transition: 0.5s ease-in-out;
+}
+nav.navClosed{
+    width: 30px;
+}
+nav.navClosed>*{
+    translate: -100px 0;
+}
+.navClosed>.navButton{
+    display: flex;
+    translate: 0;
+}
+.navButton{
+    position: absolute;
+    width: 35px;
+    height: 100px;
+    left: 100%;
+}
+.navButton:hover{
+    cursor: pointer;
+}
+.navButton::before,.navButton::after{
+    content: '';
+    position: absolute;
+    width: 7.5px;
+    height: 30px;
+    background: #646464;
+    translate: 5px 10px;
+    border-radius: 10px;
+    transition: 0.3s ease-in-out;
+}
+.navButton::after{
+    translate: 5px -10px;
+}
+.navButton:hover::after,.navButton:hover::before{
+    background: #717171;
+}
+.navButton:hover::after{
+    translate: 15px -10px;
+    rotate: 30deg;
+}.navButton:hover::before{
+    translate: 15px 10px;
+    rotate: -30deg;
+}
+.navClosed>.navButton:hover::after{
+    rotate: -30deg;
+}
+.navClosed>.navButton:hover::before{
+    rotate: 30deg;
 }
 
 nav>ul {
