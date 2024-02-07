@@ -1,7 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito&family=Rubik+Glitch+Pop&display=swap');
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    /* font-family: 'Rubik Glitch Pop', system-ui; */
+    font-family: 'Nunito', sans-serif;
     /* transition: 0.5s ease-in-out; */
 }
 
@@ -56,7 +59,6 @@ nav>ul>li>a {
     color: var(--fontcolor);
     display: flex;
     justify-content: space-between;
-    padding-right: 10px;
     width: 100%;
 }
 
@@ -64,30 +66,26 @@ nav>ul>li>a {
     display: flex;
     margin-top: 0px;
     flex-direction: column;
-    border: 1px solid transparent;
     padding: 0px;
-    border-radius: 10px 0 0 10px;
+    border-radius: 10px;
     height: 0;
     width: 170px;
     transition: 0.5s ease-in-out;
-    gap: 5px;
+    gap: 9px;
     opacity: 0;
-    transform: translateX(15px);
-    border-right: none;
     overflow: hidden;
 }
 
 .topicOpen {
-    border: 1px solid var(--whiteshadowcolor);
     background: var(--background);
-    margin-top: 10px;
-    padding: 10px;
+    margin-top: 5px;
+    padding: 5px;
     border-right: none;
     opacity: 1;
 }
 
 .topicOpen.HTMLTopics {
-    height: 175px;
+    height: 185px;
 }
 
 .topicOpen.CSSTopics {
