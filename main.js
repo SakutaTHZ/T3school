@@ -2,7 +2,7 @@ const themeSwitch = document.getElementById("themeSwitch");
 
 themeSwitch.addEventListener("change", function () {
   if (this.checked) {
-    document.documentElement.style.setProperty("--background", "#ffffff");
+    document.documentElement.style.setProperty("--background", "rgb(243, 243, 243)");
     document.documentElement.style.setProperty("--fontcolor", "#1e1e1e");
     document.documentElement.style.setProperty(
       "--shadowcolor",
@@ -14,7 +14,7 @@ themeSwitch.addEventListener("change", function () {
     );
   } else {
     document.documentElement.style.setProperty("--background", "#1e1e1e");
-    document.documentElement.style.setProperty("--fontcolor", "#ffffff");
+    document.documentElement.style.setProperty("--fontcolor", "rgb(243, 243, 243)");
     document.documentElement.style.setProperty(
       "--shadowcolor",
       "rgba(0, 0, 0, 0.2)"

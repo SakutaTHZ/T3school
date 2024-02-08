@@ -10,7 +10,7 @@
 
 :root {
     --background: #1e1e1e;
-    --fontcolor: white;
+    --fontcolor: rgb(243, 243, 243);
     --shadowcolor: rgba(0, 0, 0, 0.2);
     --whiteshadowcolor: rgba(255, 255, 255, 0.2);
     --secondary: rgb(90, 90, 247);
@@ -35,7 +35,7 @@ nav{
     align-items: center;
 
     z-index: 10;
-    transition: 0.5s ease-in-out;
+    transition: .5s cubic-bezier(0.68, -0.55, 0.27, 1.55);
 }
 nav.navClosed>*{
     opacity: 0;
@@ -43,7 +43,7 @@ nav.navClosed>*{
 }
 nav>*{
     opacity: 1;
-    transition: all 0.5s ease-in-out,opacity 1s ease-in-out;
+    transition: all 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55),opacity 1s cubic-bezier(0.68, -0.55, 0.27, 1.55);
 }
 nav.navClosed{
     width: 30px;
