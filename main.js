@@ -40,8 +40,43 @@ navs.forEach((nav) => {
 
 const navButt = document.querySelector(".navButton");
 const nav = document.querySelector("nav");
+const section = document.querySelector('section')
 navButt.addEventListener("click", function () {
-  nav.classList.contains("navClosed")
-    ? nav.classList.remove("navClosed")
-    : nav.classList.add("navClosed");
+  if (nav.classList.contains("navClosed")) {
+    nav.classList.remove("navClosed")
+    section.style.paddingLeft = "200px";
+  } else {
+    nav.classList.add("navClosed");
+    section.style.paddingLeft = "40px";
+  }
+})
+
+const codes = document.querySelectorAll('.codeblock>.htmlCode')
+const coderesult = document.querySelectorAll('.codeblock>.result').innerHTML
+codes.forEach(test => {
+  var text = test.innerHTML.split(' ')
+  var result = ""
+  console.log(text)
+  console.log(result)
+  text.forEach(element => {
+    if (element.startsWith('<') && element[1] != '/') {
+      result += `&lt;<span class="tag">${element.substring(1)}</span> `
+    } else if (element.startsWith('<') && element[1] == '/') {
+      result += `&lt;/<span class="tag">${element.replace(/[<\/>]/g, '')}</span>&gt`
+    } else if (element.includes('=')) {
+      var parts = element.split('=');
+      var firstPart = parts[0].trim(); // Trim to remove leading/trailing spaces
+      var lastPart = parts[1].replace(/[<\/>]/g, '').trim(); // Remove quotes and trim
+      result += `<span class="attribute">${firstPart}</span>=<span class="value">${lastPart}</span>`
+      if (element[element.length - 1] == '>') {
+        result += '>'
+      } else {
+        result += ' '
+      }
+    } else {
+      result += `${element} `
+    }
+  })
+  console.log(result)
+  test.innerHTML = result
 })
