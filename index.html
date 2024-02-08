@@ -11,7 +11,7 @@
 </head>
 
 <body>
-    <nav class="navClosed">
+    <nav class="">
         <div class="navButton">
 
         </div>
@@ -120,17 +120,16 @@
 
     <section class="homeSection">
         <div class="hamburger">
-            <a href="#">Home</a> <span>></span> <a href="#">...</a>
+            <a href ="#">Home</a> <a href="#">...</a>
         </div>
         <div class="sectionContent">
+
             <h1>&lt;a&gt;&lt;/a&gt; link tag</h1>
 
             <div class="codeblock">
-                &lt;<span class="tag">a</span> <span class="attribute">href</span>=<span
-                    class="value">"https://www.banana.com"</span>&gt;Visit Banana Kingdom!&lt;/<span
-                    class="tag">a</span>&gt;
+                <div class="htmlCode"><a href="https://www.banana.com"> Visit Banana Kingdom! </a></div>
                 <div class="result">
-                    <a href="https://www.banana.com">Visit Banana Kingdom!</a>
+                    <a href="https://tharhtetzan.netlify.app">Visit Banana Kingdom!</a>
                 </div>
             </div>
 
@@ -154,22 +153,11 @@
 
             <div class="codeblock">
                 <p class="comment">/* a tag with all of its attributes*/</p>
-                &lt;<span class="tag">a</span>
-                <span class="attribute">href</span>=<span class="value">"https://www.banana.com"</span>
-                <span class="attribute">target</span>=<span class="value">"_blank"</span>
-                <span class="attribute">title</span>=<span class="value">"Visit Example.com"</span>
-                <span class="attribute">style</span>=<span class="value">"color: #0066cc; text-decoration: none;
-                    font-weight: bold;"</span>
-                <span class="attribute">tableindex</span>=<span class="value">"1"</span>
-                <span class="attribute">role</span>=<span class="value">"link"</span>
-                <span class="attribute">aria-label</span>=<span class="value">"Visit Example.com"</span>>
-                Click me to visit Banana Kingdom
-                &lt;/<span class="tag">a</span>>
+                <div class="htmlCode"><a href="https://www.banana.com" target="_blank" title="Visit_Example.com" style="color:#0066cc;text-decoration:none;font-weight:bold;" tableindex="1" role="link" aria-label="Visit_Example.com"> Click me to visit Banana Kingdom </a></div>
                 <div class="result">
                     <a href="https://www.banana.com" target="_blank" title="Visit Example.com" style="color: #0066cc; text-decoration: none; font-weight: bold;" tableindex="1" role="link" aria-label="Visit Example.com"> Click me to visit Banana Kingdom </a>
                 </div>
             </div>
-            <br>
             <hr>
 
             <h1>Attributes in &lt;a&gt;&lt;/a&gt;</h1>
@@ -178,12 +166,7 @@
             </h4>
             <div class="codeblock">
                 <p class="comment">/* a tag with download attribute*/</p>
-                &lt;<span class="tag">a</span>
-                <span class="attribute">href</span>=<span
-                    class="value">"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2F07D4xMFHzrrKjKEDk6IFQ-p_PEbpjLE3L6dHagX7A&s"</span>
-                <span class="attribute">download</span>>
-                Click me to download banana pics
-                &lt;/<span class="tag">a</span>>
+                <div class="htmlCode"><a href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2F07D4xMFHzrrKjKEDk6IFQ-p_PEbpjLE3L6dHagX7A&s" download> Click me to download banana pics </a></div>
                 <div class="result">
                     <a href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2F07D4xMFHzrrKjKEDk6IFQ-p_PEbpjLE3L6dHagX7A&s" download> Click me to download banana pics </a>
                 </div>
@@ -197,12 +180,8 @@
                 If the value is omitted, the original filename is used.
             </div>
             <div class="codeblock">
-                &lt;<span class="tag">a</span>
-                <span class="attribute">href</span>=<span class="value">"/banana.img"</span>
-                <span class="attribute">download</span>=<span class="value">"notbanana"</span>
-                >
-                Click me to download banana pics
-                &lt;/<span class="tag">a</span>>
+                <div class="htmlCode"><a href="/banana.img" download="notbanana" > Click me to download banana pics </a></div>
+                
                 <div class="result">
                     <a href="/banana.img" download="notbanana" > Click me to download banana pics </a>
                 </div>
