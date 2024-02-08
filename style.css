@@ -37,20 +37,24 @@ nav{
     z-index: 10;
     transition: 0.5s ease-in-out;
 }
+nav.navClosed>*{
+    opacity: 0;
+    translate: -100px 0;
+}
 nav>*{
-    transition: 0.5s ease-in-out;
+    opacity: 1;
+    transition: all 0.5s ease-in-out,opacity 1s ease-in-out;
 }
 nav.navClosed{
     width: 30px;
 }
-nav.navClosed>*{
-    translate: -100px 0;
-}
 .navClosed>.navButton{
+    opacity: 1;
     display: flex;
-    translate: 0;
+    translate: -25px;
 }
 .navButton{
+    opacity: 1;
     position: absolute;
     width: 35px;
     height: 100px;
@@ -263,19 +267,24 @@ section {
     height: 100dvh;
     width: 100dvw;
     padding: 0px 0px 0px 200px;
+    transition: 0.5s ease-in-out;
 }
 
 section>.hamburger {
     height: 5%;
     display: flex;
     align-items: center;
-    gap: 5px;
     padding: 0 20px;
 }
 
 section>.hamburger>a {
+    display: flex;
+    align-items: center;
     text-decoration: none;
-    color: var(--secondary);
+    color: var(--fontcolor);
+    padding: 0 10px;
+    height: 80%;
+    border-bottom: 5px solid var(--secondary);
 }
 
 section>.sectionContent {
