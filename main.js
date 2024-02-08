@@ -51,11 +51,12 @@ navButt.addEventListener("click", function () {
   }
 })
 
-const codes = document.querySelectorAll('.codeblock>.htmlCode')
-const coderesult = document.querySelectorAll('.codeblock>.result').innerHTML
+// const codes = document.querySelectorAll('.codeblock>.htmlCode')
+const codes = document.querySelectorAll('.codeblock>.result')
 codes.forEach(test => {
   var text = test.innerHTML.split(' ')
   var result = ""
+  console.log(test.innerHTML)
   console.log(text)
   console.log(result)
   text.forEach(element => {
@@ -77,6 +78,6 @@ codes.forEach(test => {
       result += `${element} `
     }
   })
-  console.log(result)
-  test.innerHTML = result
+  test.parentElement.querySelector(".htmlCode").innerHTML = result;
+  // test.innerHTML = result
 })
