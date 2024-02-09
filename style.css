@@ -14,8 +14,11 @@
     --shadowcolor: rgba(0, 0, 0, 0.2);
     --whiteshadowcolor: rgba(255, 255, 255, 0.2);
     --secondary: rgb(90, 90, 247);
+    --codeblockcolor: rgb(63, 63, 63);
 }
-
+*{
+    scroll-behavior: smooth;
+}
 body {
     background: var(--background);
     color: var(--fontcolor);
@@ -271,6 +274,7 @@ section {
 }
 
 section>.hamburger {
+    position: relative;
     height: 5%;
     display: flex;
     align-items: center;
@@ -285,6 +289,46 @@ section>.hamburger>a {
     padding: 0 10px;
     height: 80%;
     border-bottom: 5px solid var(--secondary);
+}
+
+.subCat{
+    position: absolute;
+    right: 0;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin: 20px 20px 0 0 ;
+}
+.subCat>a:first-child{
+    justify-content: flex-end;
+    background: transparent;
+}
+.subCat>a{
+    display: flex;
+    justify-content: center;
+    padding: 5px 20px;
+    text-decoration: none;
+    color: var(--fontcolor);
+    z-index: 10;
+    background: var(--codeblockcolor);
+    transition: var(--i) ease-in-out;
+    cursor: pointer;
+    border-radius: 10px;
+    border: 1px solid transparent;
+}
+.subCat>a:hover{
+    border: 1px solid white;
+}
+.subCat.subCatOpen>a{
+    transform: translateX(300px);
+    transition: 0.5s ease-in-out;
+}
+.subCat.subCatOpen>a:first-child{
+    transform: translateX(0);
+}
+.subCat>a:first-child:hover{
+    border: 1px solid transparent;
 }
 
 section>.sectionContent {
@@ -319,7 +363,7 @@ section>.sectionContent {
 
 /* code */
 .codeblock {
-    background: rgb(50, 50, 50);
+    background: var(--codeblockcolor);
     width: 100%;
     padding: 10px;
     color: aliceblue;
@@ -336,16 +380,17 @@ section>.sectionContent {
     color: rgb(176, 80, 255);
 }
 
-.value {
+.value,.tip{
     color: rgb(202, 190, 54);
 }
 
-.attribute {
+.attribute,.note{
     color: rgb(69, 162, 255);
 }
 
-.comment {
-    color: rgb(99, 159, 9);
+.comment{
+    color: rgba(116, 172, 33, 0.75);
+    margin-bottom: 10px;
 }
 
 /* explanation */
@@ -363,4 +408,28 @@ section>.sectionContent {
 .explanation ul {
     margin-left: 20px;
     transform: translateX(30px);
+}
+
+.subTitle{
+    padding-top: 20px;
+    margin-top: 0px;
+    border-top: 5px solid var(--whiteshadowcolor);
+}
+
+@media screen and (min-width: 500px) {
+    section>.sectionContent {
+        padding: 0 10%;
+    }
+}
+
+@media screen and (min-width: 1000px) {
+    section>.sectionContent {
+        padding: 0 15%;
+    }
+}
+
+@media screen and (min-width: 1500px) {
+    section>.sectionContent {
+        padding: 0 20%;
+    }
 }
