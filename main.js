@@ -51,14 +51,10 @@ navButt.addEventListener("click", function () {
   }
 })
 
-// const codes = document.querySelectorAll('.codeblock>.htmlCode')
 const codes = document.querySelectorAll('.codeblock>.result')
 codes.forEach(test => {
   var text = test.innerHTML.split(' ')
   var result = ""
-  console.log(test.innerHTML)
-  console.log(text)
-  console.log(result)
   text.forEach(element => {
     if (element.startsWith('<') && element[1] != '/') {
       result += `&lt;<span class="tag">${element.substring(1)}</span> `
@@ -66,9 +62,18 @@ codes.forEach(test => {
       result += `&lt;/<span class="tag">${element.replace(/[<\/>]/g, '')}</span>&gt`
     } else if (element.includes('=')) {
       var parts = element.split('=');
-      var firstPart = parts[0].trim(); // Trim to remove leading/trailing spaces
-      var lastPart = parts[1].replace(/[<\/>]/g, '').trim(); // Remove quotes and trim
-      result += `<span class="attribute">${firstPart}</span>=<span class="value">${lastPart}</span>`
+      var firstPart = parts[0].trim();
+      result += `<span class="attribute">${firstPart}</span>=`
+
+      for (let i = 1; i < parts.length; i++) {
+        const element = parts[i].replace(/[<\/>]/g, '').trim();
+        if(i==parts.length-1){
+          result += `<span class="value">${element}</span>`
+        }else{
+          result += `<span class="value">${element}=</span>`
+        }
+      }
+      
       if (element[element.length - 1] == '>') {
         result += '>'
       } else {
@@ -79,5 +84,10 @@ codes.forEach(test => {
     }
   })
   test.parentElement.querySelector(".htmlCode").innerHTML = result;
-  // test.innerHTML = result
 })
+
+openSubCat = ()=>{
+  document.querySelector('.subCat').classList.contains("subCatOpen")?
+  document.querySelector('.subCat').classList.remove("subCatOpen"):
+  document.querySelector('.subCat').classList.add("subCatOpen")
+}
