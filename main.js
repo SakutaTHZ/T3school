@@ -40,16 +40,22 @@ navs.forEach((nav) => {
 
 const navButt = document.querySelector(".navButton");
 const nav = document.querySelector("nav");
-const section = document.querySelector('section')
+const section = document.querySelectorAll('section')
 navButt.addEventListener("click", function () {
   if (nav.classList.contains("navClosed")) {
     nav.classList.remove("navClosed")
-    section.style.paddingLeft = "200px";
+    setSectionPadding(section,"200px")
   } else {
     nav.classList.add("navClosed");
-    section.style.paddingLeft = "40px";
+    setSectionPadding(section,"40px")
   }
 })
+
+setSectionPadding=(data,size)=> {
+  data.forEach(element => {
+    element.style.paddingLeft = size
+  })
+}
 
 const codes = document.querySelectorAll('.codeblock>.result')
 codes.forEach(test => {
@@ -86,8 +92,38 @@ codes.forEach(test => {
   test.parentElement.querySelector(".htmlCode").innerHTML = result;
 })
 
-openSubCat = ()=>{
-  document.querySelector('.subCat').classList.contains("subCatOpen")?
-  document.querySelector('.subCat').classList.remove("subCatOpen"):
-  document.querySelector('.subCat').classList.add("subCatOpen")
+const subCats = document.querySelectorAll('.subCat')
+subCats.forEach(sub=>{
+  sub.addEventListener('click',()=>{
+    sub.classList.contains("subCatOpen")?
+    sub.classList.remove("subCatOpen"):
+    sub.classList.add("subCatOpen")
+  })
+})
+
+const closeSubCats = ()=>{
+  subCats.forEach(sub=>{
+    sub.classList.add("subCatOpen")
+  })
 }
+
+let directories ={
+  "Links":{to:"linkSection"},
+  "Lists":{to:"listSection"},
+  "Tables":{to:"tableSection"},
+  "Styles & Sematics":{to:"stylesSemanticsSection"},
+  "Audio & Video":{to:"audioVideoSection"},
+  "Forms & input":{to:"formsInputSection"}
+}
+
+const topicContents=document.querySelectorAll('.topic>a')
+topicContents.forEach(data =>{
+  data.addEventListener("click",()=>{
+    console.log()
+    document.querySelectorAll(`section`).forEach(element=>{
+      element.classList.remove('currentTopic')
+    })
+    document.querySelector(`.${directories[data.innerText].to}`).classList.add('currentTopic')
+    closeSubCats()
+  })
+})
