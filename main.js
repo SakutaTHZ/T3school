@@ -1,29 +1,41 @@
+const themes = {
+  light:{
+    "background":"rgb(243, 243, 243)",
+    "fontcolor":"#1e1e1e",
+    "shadowcolor":"rgba(255, 255, 255, 0.2)",
+    "whiteshadowcolor":"rgba(0, 0, 0, 0.2)",
+    "codeblockcolor":"rgb(63, 63, 63)"
+  },dark:{
+    "background":"#1e1e1e",
+    "fontcolor":"rgb(243, 243, 243)",
+    "shadowcolor":"rgba(0, 0, 0, 0.2)",
+    "whiteshadowcolor":"rgba(255, 255, 255, 0.2)",
+    "codeblockcolor":"rgb(63, 63, 63)"
+  },
+}
+
+const setTheme = ()=>{
+  if(localStorage.getItem('theme')==null){
+    localStorage.setItem('theme', 'light');
+  }
+  localStorage.getItem('theme')=='dark'?setThemeMode(themes.dark):setThemeMode(themes.light)
+}
+const setThemeMode = (mode)=>{
+  document.documentElement.style.setProperty("--background", mode.background);
+  document.documentElement.style.setProperty("--fontcolor", mode.fontcolor);
+  document.documentElement.style.setProperty("--shadowcolor",mode.shadowcolor);
+  document.documentElement.style.setProperty("--whiteshadowcolor",mode.whiteshadowcolor);
+  document.documentElement.style.setProperty("--codeblockcolor",mode.codeblockcolor);
+
+}
+
+setTheme()
+
 const themeSwitch = document.getElementById("themeSwitch");
 
 themeSwitch.addEventListener("change", function () {
-  if (this.checked) {
-    document.documentElement.style.setProperty("--background", "rgb(243, 243, 243)");
-    document.documentElement.style.setProperty("--fontcolor", "#1e1e1e");
-    document.documentElement.style.setProperty(
-      "--shadowcolor",
-      "rgba(255, 255, 255, 0.2)"
-    );
-    document.documentElement.style.setProperty(
-      "--whiteshadowcolor",
-      "rgba(0, 0, 0, 0.2)"
-    );
-  } else {
-    document.documentElement.style.setProperty("--background", "#1e1e1e");
-    document.documentElement.style.setProperty("--fontcolor", "rgb(243, 243, 243)");
-    document.documentElement.style.setProperty(
-      "--shadowcolor",
-      "rgba(0, 0, 0, 0.2)"
-    );
-    document.documentElement.style.setProperty(
-      "--whiteshadowcolor",
-      "rgba(255, 255, 255, 0.2)"
-    );
-  }
+  localStorage.getItem('theme')=='dark'?localStorage.setItem('theme', 'light'):localStorage.setItem('theme', 'dark')
+  setTheme()
 });
 
 const navs = document.querySelectorAll(".navs>li");
