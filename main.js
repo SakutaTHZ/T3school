@@ -135,13 +135,26 @@ let directories ={
 const topicContents=document.querySelectorAll('.topic>a')
 topicContents.forEach(data =>{
   data.addEventListener("click",()=>{
-    console.log()
     document.querySelectorAll(`section`).forEach(element=>{
       element.classList.remove('currentTopic')
     })
     document.querySelector(`.${directories[data.innerText].to}`).classList.add('currentTopic')
-    localStorage.setItem('currentPage', 'light');
+    localStorage.setItem('currentPage', `.${directories[data.innerText].to}`);
     closeSubCats()
   })
 })
 
+const setPage = (page)=>{
+  document.querySelectorAll(`section`).forEach(element=>{
+    element.classList.remove('currentTopic')
+  })
+  document.querySelector(page).classList.add('currentTopic')
+  closeSubCats()
+}
+
+window.addEventListener('load', function() {
+  // Your code to be executed on page load
+  if(localStorage.getItem('currentPage') != null){
+    setPage(localStorage.getItem('currentPage'))
+  }
+});

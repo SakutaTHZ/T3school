@@ -30,7 +30,7 @@ pre{
     padding-left: 20px;
 }
 
-ul{
+section ul,section ol{
     padding-left: 20px;
 }
 
@@ -343,6 +343,7 @@ section>.sectionContent {
     padding: 10px;
     margin-top: 10px;
     border-radius: 7.5px;
+    color: var(--fontcolor);
 }
 .tag {
     color: rgb(176, 80, 255);
