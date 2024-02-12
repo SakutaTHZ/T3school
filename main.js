@@ -27,16 +27,20 @@ const setThemeMode = (mode)=>{
   document.documentElement.style.setProperty("--whiteshadowcolor",mode.whiteshadowcolor);
   document.documentElement.style.setProperty("--codeblockcolor",mode.codeblockcolor);
 
+  localStorage.getItem('theme')=='dark'?
+  document.querySelector('.lightswitch').classList.add("lightswitchOn"):
+  document.querySelector('.lightswitch').classList.remove("lightswitchOn")
 }
 
 setTheme()
 
 const themeSwitch = document.getElementById("themeSwitch");
 
-themeSwitch.addEventListener("change", function () {
+// lightswitch
+document.querySelector('.lightswitch').addEventListener('click',()=>{
   localStorage.getItem('theme')=='dark'?localStorage.setItem('theme', 'light'):localStorage.setItem('theme', 'dark')
   setTheme()
-});
+})
 
 const navs = document.querySelectorAll(".navs>li");
 const topics = document.querySelectorAll(".topic");
@@ -77,7 +81,7 @@ codes.forEach(test => {
     if (element.startsWith('<') && element[1] != '/') {
       result += `&lt;<span class="tag">${element.substring(1)}</span> `
     } else if (element.startsWith('<') && element[1] == '/') {
-      result += `&lt;/<span class="tag">${element.replace(/[<\/>]/g, '')}</span>&gt`
+      result += `&lt;/<span class="tag">${element.replace(/[<\/]/g,'')}</span>`
     } else if (element.includes('=')) {
       var parts = element.split('=');
       var firstPart = parts[0].trim();
@@ -98,7 +102,7 @@ codes.forEach(test => {
         result += ' '
       }
     } else {
-      result += `${element} `
+      result += `${element}`
     }
   })
   test.parentElement.querySelector(".htmlCode").innerHTML = result;
@@ -136,6 +140,8 @@ topicContents.forEach(data =>{
       element.classList.remove('currentTopic')
     })
     document.querySelector(`.${directories[data.innerText].to}`).classList.add('currentTopic')
+    localStorage.setItem('currentPage', 'light');
     closeSubCats()
   })
 })
+

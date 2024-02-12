@@ -26,6 +26,13 @@ body {
     transition: 0.5s ease-in-out;
     overflow: hidden;
 }
+pre{
+    padding-left: 20px;
+}
+
+ul{
+    padding-left: 20px;
+}
 
 nav{
     position: fixed;
@@ -37,6 +44,7 @@ nav{
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
 
     z-index: 10;
     transition: .5s cubic-bezier(0.68, -0.55, 0.27, 1.55);
@@ -47,7 +55,7 @@ nav.navClosed>*{
 }
 nav>*{
     opacity: 1;
-    transition: all 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55),opacity 1s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+    transition: all 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55);
 }
 nav.navClosed{
     width: 30px;
@@ -204,66 +212,8 @@ h3 {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 20px;
-    position: absolute;
     bottom: 10px;
-}
-
-.switch {
-    position: relative;
-    display: inline-block;
-    width: 40px;
-    height: 20px;
-}
-
-.switch input {
-    opacity: 0;
-    width: 0;
-    height: 0;
-}
-
-.slider {
     position: absolute;
-    cursor: pointer;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: #ccc;
-    -webkit-transition: .4s;
-    transition: .4s;
-    border-radius: 34px;
-}
-
-.slider:before {
-    position: absolute;
-    content: "";
-    height: 20px;
-    width: 20px;
-    left: 0px;
-    bottom: 0px;
-    background-color: white;
-    -webkit-transition: .4s;
-    transition: .4s;
-    border-radius: 50%;
-}
-
-input:checked+.slider {
-    background-color: #2196F3;
-}
-
-input:checked+.slider:before {
-    -webkit-transform: translateX(20px);
-    -ms-transform: translateX(20px);
-    transform: translateX(20px);
-}
-
-.slider.round {
-    border-radius: 34px;
-}
-
-.slider.round:before {
-    border-radius: 50%;
 }
 
 /* section */
@@ -304,9 +254,10 @@ section>.hamburger>a {
 }
 
 .subCat{
-    position: absolute;
-    right: 220px;
-    height: 100%;
+    position: fixed;
+    right: 20px;
+    top: 0;
+    height: 40px;
     display: flex;
     flex-direction: column;
     gap: 5px;
@@ -320,7 +271,7 @@ section>.hamburger>a {
     justify-content: center;
     padding: 5px 20px;
     text-decoration: none;
-    color: var(--fontcolor);
+    color: white;
     z-index: 10;
     background: var(--codeblockcolor);
     transition: var(--i) ease-in-out;
@@ -341,13 +292,16 @@ section>.hamburger>a {
     transform: translateX(0);
     opacity: 1;
 }
+.subCat>a:first-child{
+    color: var(--fontcolor);
+}
 .subCat>a:first-child:hover{
     border: 1px solid transparent;
 }
 
 section>.sectionContent {
     position: relative;
-    height: 95%;
+    height: 100%;
     padding: 20px;
     display: flex;
     flex-direction: column;
@@ -445,21 +399,51 @@ section>.sectionContent {
     border-radius: 50%;
 }
 
+/* light switch */
+.lightswitch{
+    position: relative;
+    display: flex;
+    padding: 3px;
+    width: 32px;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    color: var(--fontcolor);
+    overflow: hidden;
+    cursor: pointer;
+    border: 1px solid var(--whiteshadowcolor);
+    box-shadow: 0 0 10px var(--shadowcolor),inset 0 0 10px var(--shadowcolor);
+    transition: .5s ease-in-out;
+}
+.lightswitch:hover{
+    background: var(--whiteshadowcolor);
+}
+.lightswitch>div{
+    position: absolute;
+    display: flex;
+    gap: 10px;
+    transition: .5s ease-in-out;
+}
+.lightswitchOn>*{
+    translate: -35px 0;
+    /* translate: 0px 0; */
+}
+/* light switch */
+
 @media screen and (min-width: 500px) {
     section>.sectionContent {
-        padding: 50px 10% 20% 10%;
+        padding: 20px 10% 20% 10%;
     }
 }
 
 @media screen and (min-width: 1000px) {
     section>.sectionContent {
-        padding: 50px 15% 20% 15%;
+        padding: 20px 15% 20% 15%;
     }
 }
 
 @media screen and (min-width: 1500px) {
     section>.sectionContent {
-        padding: 50px 20% 20% 20%;
+        padding: 20px 20% 20% 20%;
     }
 }
 

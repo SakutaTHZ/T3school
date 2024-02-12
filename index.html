@@ -109,36 +109,41 @@
             <li>
                 <a href="#">Apache</a>
             </li>
-            <div class="theme-switch-container">
-                <label class="switch">
-                    <input type="checkbox" id="themeSwitch">
-                    <span class="slider round"></span>
-                </label>
-            </div>
+            
         </ul>
+        <div class="theme-switch-container">
+            <div class="lightswitch lightswitchOn">
+                <div>
+                    <span class="material-symbols-outlined">
+                        lightbulb
+                    </span>
+                    <span class="material-symbols-outlined">
+                        nightlight
+                    </span>
+                </div>
+            </div>
+        </div>
     </nav>
     <!-- link Section -->
     <section class="linkSection currentTopic">
-        <div class="hamburger">
-            <a href ="#">Home</a> <a href="#">></a><a href="#">Links</a>
-            <div class="subCat subCatOpen">
-                <a onclick="openSubCat()">
-                    <span class="material-symbols-outlined">
-                    menu
-                    </span>
-                </a>
-                <a href="#downloadattri" style="--i:0.5s;">download</a>
-                <a href="#hrefattri"     style="--i:0.6s;">href</a>
-                <a href="#hreflangattri" style="--i:0.7s;">hreflang</a>
-                <a href="#mediaattri"    style="--i:0.8s;">media</a>
-                <a href="#pingattri"     style="--i:0.9s;">ping</a>
-                <a href="#referrerpolicyattri" style="--i:1s;">referrerpolicy</a>
-                <a href="#relattri"      style="--i:1.1s;">rel</a>
-                <a href="#targetattri"   style="--i:1.2s;">target</a>
-                <a href="#typeattri"     style="--i:1.3s;">type</a>
-            </div>
-        </div>
         <div class="sectionContent">
+        
+            <div class="subCat subCatOpen">
+            <a onclick="openSubCat()">
+                <span class="material-symbols-outlined">
+                menu
+                </span>
+            </a>
+            <a href="#downloadattri" style="--i:0.5s;">download</a>
+            <a href="#hrefattri"     style="--i:0.6s;">href</a>
+            <a href="#hreflangattri" style="--i:0.7s;">hreflang</a>
+            <a href="#mediaattri"    style="--i:0.8s;">media</a>
+            <a href="#pingattri"     style="--i:0.9s;">ping</a>
+            <a href="#referrerpolicyattri" style="--i:1s;">referrerpolicy</a>
+            <a href="#relattri"      style="--i:1.1s;">rel</a>
+            <a href="#targetattri"   style="--i:1.2s;">target</a>
+            <a href="#typeattri"     style="--i:1.3s;">type</a>
+        </div>
 
             <h1 id="linkSectionTop">&lt;a&gt;&lt;/a&gt; link tag</h1>
 
@@ -410,8 +415,8 @@
 
     <!-- List section -->
     <section class="listSection">
-        <div class="hamburger">
-            <a href ="#">Home</a> <a href="#">></a><a href="#">Lists</a>
+        <div class="sectionContent">
+
             <div class="subCat subCatOpen">
                 <a onclick="openSubCat()">
                     <span class="material-symbols-outlined">
@@ -428,73 +433,43 @@
                 <a href="#targetattri"   style="--i:1.2s;">target</a>
                 <a href="#typeattri"     style="--i:1.3s;">type</a>
             </div>
-        </div>
-        <div class="sectionContent">
-
             <h1 id="listSectionTop">&lt;li&gt;&lt;/li&gt; list tag</h1>
 
             <div class="codeblock">
-                <div class="htmlCode"></div>
+                <p class="comment">/* A list tag example */</p>
+                <pre class="htmlCode"></pre>
                 <div class="result">
-                    <a href="https://tharhtetzan.netlify.app"> Visit Banana Kingdom! </a>
+                    <ul>
+                        <li> Item 1 </li>
+                        <li> Item 2 </li>
+                        <li> Item 3 </li>
+                     </ul>
                 </div>
             </div>
 
             <div class="explanation">
                 <p class="explanationTitle">Definition and Usage</p>
                 <p>
-                    The &lta> tag defines a hyperlink, which is used to link from one page to another.<br>
-
-                        The most important attribute of the &lta> element is the href attribute, which indicates the
-                            link's destination.<br>
-
-                            By default, links will appear as follows in all browsers:
+                    HTML provides various list elements that allow you to structure and organize content. Here are some examples and tips/tricks for using HTML list tags:
                 </p>
-
-                <ul>
-                    <li>An unvisited link is underlined and blue</li>
-                    <li>A visited link is underlined and purple</li>
-                    <li> An active link is underlined and red</li>
-                </ul>
             </div>
 
-            <div class="codeblock">
-                <p class="comment">/* a tag with all of its attributes*/</p>
-                <div class="htmlCode"></div>
-                <div class="result">
-                    <a href="https://www.banana.com" target="_blank" title="VisitExample.com" style="color:#0066cc;text-decoration:none;font-weight:bold;" tableindex="1" role="link" aria-label="VisitExample.com"> Click me to visit Banana Kingdom </a>
-                </div>
-            </div>
-            <hr>
-
-            <h1>Attributes in &lt;a&gt;&lt;/a&gt;</h1>
-            <!-- download attribute -->
+            <!-- Unordered List -->
             <h4 class="subTitle">
-                🔴 download Attribute
+                🔴 Unordered List &ltul>:
             </h4>
             <div class="codeblock">
-                <p class="comment">/* a tag with download attribute*/</p>
-                <div class="htmlCode"></div>
+                <p class="comment">/* Unordered List */</p>
+                <pre class="htmlCode"></pre>
                 <div class="result">
-                    <a href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2F07D4xMFHzrrKjKEDk6IFQ-p_PEbpjLE3L6dHagX7A&s" download> Click me to download banana pics </a>
+                    <ul>
+                        <li> Item 1 </li>
+                        <li> Item 2 </li>
+                        <li> Item 3 </li>
+                     </ul>
                 </div>
             </div>
-            <div class="explanation">
-                The download attribute specifies that the target (the file specified in the href attribute) will be
-                downloaded when a user clicks on the hyperlink.<br>
-                The optional value of the download attribute will be the new name of the file after it is downloaded.
-                There are no restrictions on allowed values, and the browser will automatically detect the correct file
-                extension and add it to the file (.img, .pdf, .txt, .html, etc.).<br>
-                If the value is omitted, the original filename is used.
-            </div>
-            <div class="codeblock">
-                <div class="htmlCode"></div>
-                
-                <div class="result">
-                    <a href="/banana.img" download="notbanana" > Click me to download banana pics </a>
-                </div>
-            </div>
-            <!-- download attribute -->
+            <!-- Unordered List -->
         </div>
         <a class="goToTop" href="#listSectionTop">
             <span class="material-symbols-outlined">
