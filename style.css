@@ -129,7 +129,10 @@ nav>ul>li>a {
     justify-content: space-between;
     width: 100%;
 }
-
+nav>h3{
+    display: flex;
+    gap: 5px;
+}
 .topic {
     display: flex;
     margin-top: 0px;
@@ -349,11 +352,21 @@ section>.sectionContent {
     color: rgb(176, 80, 255);
 }
 
-.value,.tip{
+.value{
     color: rgb(202, 190, 54);
 }
+.tip,.note{
+    background: rgb(232, 217, 58);
+    color: var(--background);
+    padding: 10px;
+    border-radius: 10px;
+    font-weight: 400;
+}
+.note{
+    background: rgb(69, 162, 255);
+}
 
-.attribute,.note{
+.attribute{
     color: rgb(69, 162, 255);
 }
 

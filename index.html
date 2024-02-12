@@ -15,7 +15,12 @@
         <div class="navButton">
 
         </div>
-        <h3>Training Time</h3>
+        <h3>
+            <span class="material-symbols-outlined">
+            code
+            </span>
+            T3 school
+        </h3>
         <ul class="navs">
             <li>
                 <a href="#">Home</a>
@@ -604,6 +609,133 @@
             <!--Semantic Lists:-->
 
         </div>
+        <a class="goToTop" href="#listSectionTop">
+            <span class="material-symbols-outlined">
+                arrow_upward
+            </span>
+        </a>
+    </section>
+
+    <!-- Table section -->
+    <section class="tableSection">
+        <div class="sectionContent">
+
+            <div class="subCat subCatOpen">
+                <a onclick="openSubCat()">
+                    <span class="material-symbols-outlined">
+                    menu
+                    </span>
+                </a>
+                <a href="#tablecaption" style="--i:0.5s;">Table Caption</a>
+                <a href="#orderlist" style="--i:0.6s;">ordered list</a>
+                <a href="#definitionlist" style="--i:0.7s;">definition list</a>
+                <a href="#nestedlist" style="--i:0.8s;">nested list</a>
+                <a href="#customlist" style="--i:0.9s;">custom list</a>
+                <a href="#semanticlist" style="--i:1.0s;">semantic list</a>
+            </div>
+
+            <h1 id="listSectionTop">&lt;table&gt;&lt;/table&gt; table tag</h1>
+
+            <div class="codeblock">
+                <p class="comment">/* A table tag example */</p>
+                <pre class="htmlCode"></pre>
+                <div class="result">
+                    <table>
+                        <tbody> 
+                            <tr> 
+                            <th> Header 1 </th> 
+                            <th> Header 2 </th> 
+                            </tr> 
+                            <tr> 
+                            <td> Data 1 </td> 
+                            <td> Data 2 </td> 
+                            </tr> 
+                        </tbody> 
+                    </table> 
+
+                </div>
+            </div>
+
+            <div class="explanation">
+                <p class="explanationTitle">Definition and Usage</p>
+                <p>
+                    HTML &lttable> elements are used to create tables for organizing and presenting data. Here are examples and tips/tricks for using HTML tables:
+                </p>
+            </div>
+
+            <!-- Table Caption -->
+            <h4 class="subTitle" id="tablecaption">
+                🔴 Table Caption :
+            </h4>
+            <div class="explanation">
+                <p class="explanationTitle">Definition and Usage</p>
+                <p>
+                    Add a caption to describe the purpose of the table.
+                </p>
+            </div>
+            <div class="codeblock">
+                <p class="comment">/* Table caption */</p>
+                <pre class="htmlCode"></pre>
+                <div class="result">
+                    <table>
+                        <caption> Monthly Expenses </caption>
+                        <tbody> 
+                            <tr> 
+                            <th> Header 1 </th> 
+                            <th> Header 2 </th> 
+                            </tr> 
+                            <tr> 
+                            <td> Data 1 </td> 
+                            <td> Data 2 </td> 
+                            </tr> 
+                        </tbody> 
+                    </table>
+
+                </div>
+            </div>
+            <!-- Table Caption -->
+
+            <!-- Table Caption -->
+            <h4 class="subTitle" id="tablecaption">
+                🔴 Table Header (&ltthead>), Body (&lttbody>), and Footer (&lttfoot>):
+            </h4>
+            <div class="explanation">
+                <p class="explanationTitle">Definition and Usage</p>
+                <p>
+                    Use &ltthead>, &lttbody>, and &lttfoot> for better structure.
+                </p>
+            </div>
+            <div class="codeblock">
+                <p class="comment">/* Table caption */</p>
+                <pre class="htmlCode"></pre>
+                <div class="result">
+                    <table>
+                        <thead>
+                           <tr>
+                              <th> Month </th>
+                              <th> Expenses </th>
+                           </tr>
+                        </thead>
+                        <tbody>
+                           <tr>
+                              <td> January </td>
+                              <td> $500 </td>
+                           </tr>
+                           <!-- ... -->
+                        </tbody>
+                        <tfoot>
+                           <tr>
+                              <td> Total </td>
+                              <td> $2000 </td>
+                           </tr>
+                        </tfoot>
+                    </table>
+
+                </div>
+            </div>
+            <!-- Table Caption -->
+        </div>
+
         <a class="goToTop" href="#listSectionTop">
             <span class="material-symbols-outlined">
                 arrow_upward
