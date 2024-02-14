@@ -608,6 +608,8 @@
             </div>
             <!--Semantic Lists:-->
 
+            <p class="note">&ltli> is mainly used in nav nowadays. The nav on this site is also made with this structure</p>
+
         </div>
         <a class="goToTop" href="#listSectionTop">
             <span class="material-symbols-outlined">
@@ -627,14 +629,14 @@
                     </span>
                 </a>
                 <a href="#tablecaption" style="--i:0.5s;">Table Caption</a>
-                <a href="#orderlist" style="--i:0.6s;">ordered list</a>
-                <a href="#definitionlist" style="--i:0.7s;">definition list</a>
-                <a href="#nestedlist" style="--i:0.8s;">nested list</a>
-                <a href="#customlist" style="--i:0.9s;">custom list</a>
-                <a href="#semanticlist" style="--i:1.0s;">semantic list</a>
+                <a href="#tableheadbodyfooter" style="--i:0.6s;">Head Body Footer</a>
+                <a href="#tableborders" style="--i:0.7s;">Table Borders</a>
+                <a href="#tablecolspanrowspan" style="--i:0.8s;">Colspan Rowspan</a>
+                <a href="#tablestyling" style="--i:0.9s;">Table Styling</a>
+                <a href="#tablecolcolgroup" style="--i:1.0s;">Col & Colgroup</a>
             </div>
 
-            <h1 id="listSectionTop">&lt;table&gt;&lt;/table&gt; table tag</h1>
+            <h1 id="tableSectionTop">&lt;table&gt;&lt;/table&gt; table tag</h1>
 
             <div class="codeblock">
                 <p class="comment">/* A table tag example */</p>
@@ -662,6 +664,8 @@
                     HTML &lttable> elements are used to create tables for organizing and presenting data. Here are examples and tips/tricks for using HTML tables:
                 </p>
             </div>
+
+            <p class="note">Nowadays Grids and Flexbox are used more than tables. While Grid and Flexbox are powerful tools for layout, it's worth noting that tables still have a valid use case when presenting actual tabular data. The choice between these layout techniques depends on the specific requirements of the design and the content being presented on the web page.</p>
 
             <!-- Table Caption -->
             <h4 class="subTitle" id="tablecaption">
@@ -695,18 +699,29 @@
             </div>
             <!-- Table Caption -->
 
-            <!-- Table Caption -->
-            <h4 class="subTitle" id="tablecaption">
+            <!-- Table Header,Body & Footer -->
+            <h4 class="subTitle" id="tableheadbodyfooter">
                 🔴 Table Header (&ltthead>), Body (&lttbody>), and Footer (&lttfoot>):
             </h4>
             <div class="explanation">
                 <p class="explanationTitle">Definition and Usage</p>
                 <p>
                     Use &ltthead>, &lttbody>, and &lttfoot> for better structure.
+                    <h4>Header and Data Cells</h4>
+                    ◻ Use &ltth> for header cells. <br>
+                    ◻ Use &lttd> for data cells.
+                    <h4>Table row</h4>
+                    ◻ Use &lttr> to define a table row. It should contain the cells (&ltth> or &lttd>).
+                    <h4>Table Header</h4>
+                    ◻ Use &ltthead> to group the header content.
+                    <h4>Table Body</h4>
+                    ◻ Use &lttbody> to group the body content (data rows).
+                    <h4>Table Footer</h4>
+                    ◻ Use &lttfoot> to group the footer content.
                 </p>
             </div>
             <div class="codeblock">
-                <p class="comment">/* Table caption */</p>
+                <p class="comment">/* Table example */</p>
                 <pre class="htmlCode"></pre>
                 <div class="result">
                     <table>
@@ -721,7 +736,6 @@
                               <td> January </td>
                               <td> $500 </td>
                            </tr>
-                           <!-- ... -->
                         </tbody>
                         <tfoot>
                            <tr>
@@ -733,16 +747,314 @@
 
                 </div>
             </div>
-            <!-- Table Caption -->
+            <!-- Table Header,Body & Footer -->
+
+            <!-- Table Borders: -->
+            <h4 class="subTitle" id="tableborders">
+                🔴 Table Borders:
+            </h4>
+            <div class="explanation">
+                <p class="explanationTitle">Definition and Usage</p>
+                <p>
+                    Use CSS to control border styling.
+                </p>
+            </div>
+            <div class="codeblock">
+                <pre class="htmlCode"></pre>
+                <div class="result">
+                    <style>
+                        table {
+                            border-collapse: collapse;
+                            width: 100%;
+                        }
+                        th, td {
+                            border: 1px solid #ddd;
+                            padding: 8px;
+                            text-align: left;
+                        }
+                    </style>
+                    
+                </div>
+            </div>
+            <!-- Table Borders: -->
+
+            <!-- Table Colspan and Rowspan: -->
+            <h4 class="subTitle" id="tablecolspanrowspan">
+                🔴 Colspan and Rowspan:
+            </h4>
+            <div class="explanation">
+                <p class="explanationTitle">Definition and Usage</p>
+                <p>
+                    ◻ colspan attribute allows a cell to span multiple columns. <br>
+                    ◻ rowspan attribute allows a cell to span multiple rows.
+                </p>
+            </div>
+            <div class="codeblock">
+                <pre class="htmlCode"></pre>
+                <div class="result">
+                    <table>
+                        <thead>
+                           <tr>
+                              <th colspan="2"> Colspan </th>
+                           </tr>
+                        </thead>
+                        <tbody>
+                           <tr>
+                              <td rowspan="2"> Rowspan </td>
+                              <td> data1 </td>
+                           </tr>
+                           <tr>
+                              <td> data2 </td>
+                           </tr>
+                    </table>
+                    
+                </div>
+            </div>
+            <!-- Table Colspan and Rowspan: -->
+
+            <!-- Styling Alternating Rows: -->
+            <h4 class="subTitle" id="tablestyling">
+                🔴 Styling Alternating Rows:
+            </h4>
+            <div class="explanation">
+                <p class="explanationTitle">Definition and Usage</p>
+                <p>
+                    Use CSS :nth-child selector to style odd/even rows differently.
+                </p>
+            </div>
+            <div class="codeblock">
+                <pre class="htmlCode"></pre>
+                <div class="result">
+                    <style>
+                        .evenodd tr:nth-child(even) {
+                            background-color: var(--whiteshadowcolor);
+                        }
+                        .evenodd tr:nth-child(odd) {
+                            background-color: var(--shadowcolor);
+                        }
+                    </style>
+
+                    <table class="evenodd"> 
+                        <tbody>
+                        <tr>
+                            <td> Data Head </td>
+                            <td> data 1 </td>
+                        </tr>
+                        <tr>
+                            <td> Data Head </td>
+                            <td> data 2 </td>
+                        </tr>
+                        <tr>
+                            <td> Data Head </td>
+                            <td> data 3 </td>
+                        </tr>
+                        <tr>
+                            <td> Data Head </td>
+                            <td> data 4 </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    
+                </div>
+            </div>
+            <!-- Styling Alternating Rows: -->
+
+            <!-- Col & Colgroup -->
+            <h4 class="subTitle" id="tablecolcolgroup">
+                🔴 Col & Colgroup:
+            </h4>
+            <div class="explanation">
+                <p class="explanationTitle">Definition and Usage</p>
+                <p>
+                    ◻ The &ltcol> element is used to define properties for a single column or a group of consecutive columns. <br>
+                    ◻ It is placed inside the &ltcolgroup> element or directly within the &lttable> element. <br>
+                    ◻ You can use attributes such as span, width, style, etc., to set properties for the specified column(s).
+                </p>
+            </div>
+            <div class="codeblock">
+                <pre class="htmlCode"></pre>
+                <div class="result">
+                    <table>
+                        <colgroup>
+                          <col style="background-color:var(--whiteshadowcolor);"> 
+                          <col span="2" style="background-color:var(--shadowcolor);"> 
+                        </colgroup> 
+                        <tbody>
+                            <tr>
+                                <td> Data Head </td>
+                                <td> data 1 </td>
+                            </tr>
+                            <tr>
+                                <td> Data Head </td>
+                                <td> data 2 </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    
+                </div>
+                
+            </div>
+            <!-- Col & Colgroup -->
+
         </div>
 
+        <a class="goToTop" href="#tableSectionTop">
+            <span class="material-symbols-outlined">
+                arrow_upward
+            </span>
+        </a>
+        
+    </section>
+
+    <!-- List section -->
+    <section class="stylesSemanticsSection">
+        <div class="sectionContent">
+
+            <div class="subCat subCatOpen">
+                <a onclick="openSubCat()">
+                    <span class="material-symbols-outlined">
+                    menu
+                    </span>
+                </a>
+                <a href="#unorderlist" style="--i:0.5s;">unordered list</a>
+                <a href="#orderlist" style="--i:0.6s;">ordered list</a>
+                <a href="#definitionlist" style="--i:0.7s;">definition list</a>
+                <a href="#nestedlist" style="--i:0.8s;">nested list</a>
+                <a href="#customlist" style="--i:0.9s;">custom list</a>
+                <a href="#semanticlist" style="--i:1.0s;">semantic list</a>
+            </div>
+            <h1 id="listSectionTop">Styles & Semantics</h1>
+
+            <div class="explanation">
+                <p>
+                    In HTML, the structure and presentation of a webpage are separated into two main aspects: styles and semantics. Styles refer to the visual presentation and layout, while semantics focus on the meaning and structure of the content.
+                </p>
+            </div>
+
+            <!-- Style <style> -->
+            <h4 class="subTitle" id="unorderlist">
+                🔴 Style &ltstyle> :
+            </h4>
+            <div class="explanation">
+                <p class="explanationTitle">Definition and Usage</p>
+                <p>
+                    The &ltstyle> tag in HTML is used to embed or define CSS (Cascading Style Sheets) directly within an HTML document. It allows you to apply styles to specific HTML elements without the need for an external stylesheet. Here's an explanation of the &ltstyle> tag and some tips and tricks on how to use it effectively:
+                </p>
+            </div>
+            <div class="codeblock">
+                <p class="comment">/* &ltstyle> tag */</p>
+                <pre class="htmlCode"></pre>
+                <div class="result">
+                    <style>
+                        .test{
+                            color: salmon;
+                        }
+                    </style>
+                    
+                    <p class="test"> Color changed to salmon </p>
+                </div>
+            </div>
+            <div class="explanation">
+                <p class="explanationTitle">
+                    Specificity:
+                </p>
+                <p>
+                    ◻ Be mindful of CSS specificity when using the &ltstyle> tag. Specificity determines which styles are applied when conflicting rules exist. <br>
+                    ◻ Avoid using overly broad selectors that might unintentionally affect other elements.    
+                </p>
+                <p class="explanationTitle">
+                    Avoid Inline Styles:
+                </p>
+                <p>
+                    ◻ While the &ltstyle> tag allows for internal styling, avoid using inline styles (style attributes on individual elements) within the HTML body for maintainability and separation of concerns.
+                </p>
+                <p class="explanationTitle">
+                    Responsive Design:
+                </p>
+                <p>
+                    ◻ Utilize media queries within the &ltstyle> tag to create responsive designs that adapt to different screen sizes. <br>
+                    ◻ Example:
+                </p>
+                <div class="codeblock">
+                    <p class="comment">/* Resize window to see the effect */</p>
+                    <pre class="htmlCode"></pre>
+                    <div class="result">
+                        <style>
+                            @media (max-width: 768px) {
+                                .test{
+                                    background: burlywood;
+                                    color: brown;
+                                }
+                            }
+                        </style>
+                        
+                        <p class="test"> Resize to change color </p>
+                    </div>
+                </div>
+                <p class="explanationTitle">
+                    Class and ID Selectors:
+                </p>
+                <p>
+                    ◻ Use class and ID selectors to target specific elements and apply styles more selectively. <br>
+                    ◻ Example:
+                </p>
+                <div class="codeblock">
+                    <p class="comment">/* Resize window to see the effect */</p>
+                    <pre class="htmlCode"></pre>
+                    <div class="result">
+                        <style>
+                            .class{
+                                color: salmon;
+                            }
+                            #id {
+                                color: crimson;
+                            }
+                        </style>
+                        
+                        <p class="class"> color for class </p>
+                        <p id="id"> color for id </p>
+                    </div>
+                </div>
+                <p class="explanationTitle">
+                    Comments:
+                </p>
+                <p>
+                    ◻ Add comments within the &ltstyle> tag to provide clarity on the purpose of specific styles or groups of styles. 
+                </p>
+                <p class="explanationTitle">
+                    Avoid !important:
+                </p>
+                <p>
+                    ◻ Minimize the use of '!important' in your styles, as it can make debugging and maintaining styles more challenging. It should be used sparingly.
+                </p>
+                <p class="explanationTitle">
+                    External Stylesheets:
+                </p>
+                <p>
+                    ◻ For larger projects, consider moving styles to an external stylesheet and linking it to the HTML file using the &ltlink> tag. This promotes maintainability and reusability. <br>
+                    ◻ Example:
+                </p>
+                <div class="codeblock">
+                    &ltlink rel="stylesheet" href="style.css" >
+                </div>
+                <p class="explanationTitle">
+                    Use Preprocessors:
+                </p>
+                <p>
+                    ◻ Consider using CSS preprocessors like Sass or Less, which provide additional features such as variables, nesting, and functions.
+                </p>
+                <p class="tip">By following these tips, you can effectively use the &ltstyle> tag to apply styles to your HTML documents while maintaining clean and maintainable code. Remember that the goal is to create styles that are easy to understand, modify, and extend.</p>
+            </div>
+            <!-- Style <style> -->
+
+        </div>
         <a class="goToTop" href="#listSectionTop">
             <span class="material-symbols-outlined">
                 arrow_upward
             </span>
         </a>
     </section>
-
+    
     <!-- scripts -->
     <script src="main.js"></script>
 </body>
