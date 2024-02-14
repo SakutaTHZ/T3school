@@ -13,6 +13,20 @@ const themes = {
     "codeblockcolor":"rgb(63, 63, 63)"
   },
 }
+const directories={
+  "Links":{to:"linkSection"},
+  "Lists":{to:"listSection"},
+  "Tables":{to:"tableSection"},
+  "Styles & Semantics":{to:"stylesSemanticsSection"},
+  "Audio & Video":{to:"audioVideoSection"},
+  "Forms & input":{to:"formsInputSection"}
+}
+const navs = document.querySelectorAll(".navs>li");
+const topics = document.querySelectorAll(".topic");
+const themeSwitch = document.getElementById("themeSwitch");
+const navButt = document.querySelector(".navButton");
+const nav = document.querySelector("nav");
+const section = document.querySelectorAll('section')
 
 const setTheme = ()=>{
   if(localStorage.getItem('theme')==null){
@@ -34,29 +48,47 @@ const setThemeMode = (mode)=>{
 
 setTheme()
 
-const themeSwitch = document.getElementById("themeSwitch");
-
 // lightswitch
 document.querySelector('.lightswitch').addEventListener('click',()=>{
   localStorage.getItem('theme')=='dark'?localStorage.setItem('theme', 'light'):localStorage.setItem('theme', 'dark')
   setTheme()
 })
 
-const navs = document.querySelectorAll(".navs>li");
-const topics = document.querySelectorAll(".topic");
-
 navs.forEach((nav) => {
   nav.addEventListener("click", function () {
-    topics.forEach((e) => {
-      e.classList.remove("topicOpen");
-    });
-    nav.querySelector(".topic").classList.add("topicOpen");
-  });
-});
+    var chk = 0
+    var smolchk = localStorage.getItem('navchk')
+    nav.querySelector(".topic").classList.contains("topicOpen")?chk=1:chk=0
+    var topig = nav.querySelectorAll(".topic>a")
 
-const navButt = document.querySelector(".navButton");
-const nav = document.querySelector("nav");
-const section = document.querySelectorAll('section')
+    topics.forEach((e) => {
+      e.classList.remove("topicOpen")
+    })
+    
+    topig.forEach(data =>{
+      data.addEventListener("click",()=>{
+        setTopic(data)
+      })
+    })
+
+    if(chk==0 || smolchk==1){
+      nav.querySelector(".topic").classList.add("topicOpen")
+      localStorage.setItem('navchk', 0)
+    }
+  })
+})
+
+const setTopic = (data)=>{
+  document.querySelectorAll(`section`).forEach(element=>{
+    element.classList.remove('currentTopic')
+  })
+  console.log(data.innerText)
+  document.querySelector(`.${directories[data.innerText].to}`).classList.add('currentTopic')
+  localStorage.setItem('currentPage', `.${directories[data.innerText].to}`)
+  localStorage.setItem('navchk', 1)
+  closeSubCats()
+}
+
 navButt.addEventListener("click", function () {
   if (nav.classList.contains("navClosed")) {
     nav.classList.remove("navClosed")
@@ -79,9 +111,9 @@ codes.forEach(test => {
   var result = ""
   text.forEach(element => {
     if (element.startsWith('<') && element[1] != '/') {
-      result += `&lt;<span class="tag">${element.substring(1)}</span> `
+      result += `<span class="tag">&lt;${element.substring(1)}</span> `
     } else if (element.startsWith('<') && element[1] == '/') {
-      result += `&lt;/<span class="tag">${element.replace(/[<\/]/g,'')}</span>`
+      result += `<span class="tag">&lt;/${element.replace(/[<\/]/g,'')}</span>`
     } else if (element.includes('=')) {
       var parts = element.split('=');
       var firstPart = parts[0].trim();
@@ -97,12 +129,12 @@ codes.forEach(test => {
       }
       
       if (element[element.length - 1] == '>') {
-        result += '>'
+        result += '<span class="tag">></span>'
       } else {
         result += ' '
       }
     } else {
-      result += `${element}`
+      result += `${element} `
     }
   })
   test.parentElement.querySelector(".htmlCode").innerHTML = result;
@@ -122,27 +154,6 @@ const closeSubCats = ()=>{
     sub.classList.add("subCatOpen")
   })
 }
-
-let directories ={
-  "Links":{to:"linkSection"},
-  "Lists":{to:"listSection"},
-  "Tables":{to:"tableSection"},
-  "Styles & Sematics":{to:"stylesSemanticsSection"},
-  "Audio & Video":{to:"audioVideoSection"},
-  "Forms & input":{to:"formsInputSection"}
-}
-
-const topicContents=document.querySelectorAll('.topic>a')
-topicContents.forEach(data =>{
-  data.addEventListener("click",()=>{
-    document.querySelectorAll(`section`).forEach(element=>{
-      element.classList.remove('currentTopic')
-    })
-    document.querySelector(`.${directories[data.innerText].to}`).classList.add('currentTopic')
-    localStorage.setItem('currentPage', `.${directories[data.innerText].to}`);
-    closeSubCats()
-  })
-})
 
 const setPage = (page)=>{
   document.querySelectorAll(`section`).forEach(element=>{
