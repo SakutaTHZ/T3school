@@ -16,6 +16,12 @@
     --secondary: rgb(90, 90, 247);
     --codeblockcolor: rgb(63, 63, 63);
 }
+svg{
+    position: fixed;
+    bottom: -300px;
+    z-index: -100;
+    opacity: .3;
+}
 *{
     scroll-behavior: smooth;
     scroll-margin-top: 200px;
@@ -356,7 +362,7 @@ section>.sectionContent {
     color: rgb(202, 190, 54);
 }
 .tip,.note{
-    background: rgb(232, 217, 58);
+    background: rgb(232, 157, 58);
     color: var(--background);
     padding: 10px;
     border-radius: 10px;
@@ -383,7 +389,7 @@ section>.sectionContent {
 }
 
 .explanationTitle {
-    font-size: 1.5em;
+    font-size: 1.2em;
     font-weight: bolder;
 }
 
@@ -393,6 +399,7 @@ section>.sectionContent {
 }
 
 .subTitle{
+    font-size: 1.4em;
     padding-top: 20px;
     margin-top: 0px;
     border-top: 5px solid var(--whiteshadowcolor);
