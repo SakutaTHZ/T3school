@@ -229,7 +229,7 @@
             <div class="explanation">
                 The href attribute specifies the URL of the page the link goes to. <br>
                 If the href attribute is not present, the &lta> tag will not be a hyperlink. <br>
-                <p class="tip">Tip: You can use href="#top" or href="#" to link to the top of the current page!</p>
+                <p class="tip">You can use href="#top" or href="#" to link to the top of the current page!</p>
             </div>
             <div class="codeblock">
                 <p class="comment">/*Go to the top page*/</p>
@@ -284,7 +284,7 @@
             <div class="explanation">
                 The hreflang attribute specifies the language of the linked document. <br>
                 This attribute is only used if the href attribute is set. <br>
-                <p class="note">Note: This attribute is purely advisory.</p>
+                <p class="note">This attribute is purely advisory.</p>
             </div>
             <!-- hreflang attribute -->
 
@@ -304,7 +304,7 @@
                 This attribute is used to specify that the target URL is designed for special devices (like iPhone), speech or print media. <br>
                 This attribute can accept several values. <br>
                 Only used if the href attribute is present. <br>
-                <p class="note">Note: This attribute is purely advisory.</p>
+                <p class="note">This attribute is purely advisory.</p>
             </div>
             <!-- media attribute -->
 
@@ -363,7 +363,7 @@
             <div class="explanation">
                 The rel attribute specifies the relationship between the current document and the linked document.
                 Only used if the href attribute is present.
-                <p class="tip">Tip: Search engines can use this attribute to get more information about a link!</p>
+                <p class="tip">Search engines can use this attribute to get more information about a link!</p>
             </div>
             <!-- rel attribute -->
 
@@ -404,7 +404,7 @@
             <div class="explanation">
                 The type attribute specifies the Internet media type (formerly known as MIME type) of the linked document. <br>
                 This attribute is only used if the href attribute is set. <br>
-                <p class="note">Note: This attribute is purely advisory.</p>
+                <p class="note">This attribute is purely advisory.</p>
             </div>
             <!-- type attribute -->
 
@@ -906,7 +906,7 @@
         
     </section>
 
-    <!-- List section -->
+    <!-- sematics section -->
     <section class="stylesSemanticsSection">
         <div class="sectionContent">
 
@@ -916,14 +916,11 @@
                     menu
                     </span>
                 </a>
-                <a href="#unorderlist" style="--i:0.5s;">unordered list</a>
-                <a href="#orderlist" style="--i:0.6s;">ordered list</a>
-                <a href="#definitionlist" style="--i:0.7s;">definition list</a>
-                <a href="#nestedlist" style="--i:0.8s;">nested list</a>
-                <a href="#customlist" style="--i:0.9s;">custom list</a>
-                <a href="#semanticlist" style="--i:1.0s;">semantic list</a>
+                <a href="#styletag" style="--i:0.5s;">&ltstyle&gt tag</a>
+                <a href="#divtag" style="--i:0.6s;">&ltdiv&gt tag</a>
+                <a href="#spantag" style="--i:0.7s;">&ltspan&gt tag</a>
             </div>
-            <h1 id="listSectionTop">Styles & Semantics</h1>
+            <h1 id="spanTop">Styles & Semantics</h1>
 
             <div class="explanation">
                 <p>
@@ -932,13 +929,13 @@
             </div>
 
             <!-- Style <style> -->
-            <h4 class="subTitle" id="unorderlist">
+            <h4 class="subTitle" id="styletag">
                 🔴 Style &ltstyle> :
             </h4>
             <div class="explanation">
                 <p class="explanationTitle">Definition and Usage</p>
                 <p>
-                    The &ltstyle> tag in HTML is used to embed or define CSS (Cascading Style Sheets) directly within an HTML document. It allows you to apply styles to specific HTML elements without the need for an external stylesheet. Here's an explanation of the &ltstyle> tag and some tips and tricks on how to use it effectively:
+                    The <span class="tag">&ltstyle></span> tag in HTML is used to embed or define CSS (Cascading Style Sheets) directly within an HTML document. It allows you to apply styles to specific HTML elements without the need for an external stylesheet. Here's an explanation of the <span class="tag">&ltstyle></span> tag and some tips and tricks on how to use it effectively:
                 </p>
             </div>
             <div class="codeblock">
@@ -959,36 +956,36 @@
                     Specificity:
                 </p>
                 <p>
-                    ◻ Be mindful of CSS specificity when using the &ltstyle> tag. Specificity determines which styles are applied when conflicting rules exist. <br>
+                    ◻ Be mindful of CSS specificity when using the <span class="tag">&ltstyle></span> tag. Specificity determines which styles are applied when conflicting rules exist. <br>
                     ◻ Avoid using overly broad selectors that might unintentionally affect other elements.    
                 </p>
                 <p class="explanationTitle">
                     Avoid Inline Styles:
                 </p>
                 <p>
-                    ◻ While the &ltstyle> tag allows for internal styling, avoid using inline styles (style attributes on individual elements) within the HTML body for maintainability and separation of concerns.
+                    ◻ While the <span class="tag">&ltstyle></span> tag allows for internal styling, avoid using inline styles (style attributes on individual elements) within the HTML body for maintainability and separation of concerns.
                 </p>
                 <p class="explanationTitle">
                     Responsive Design:
                 </p>
                 <p>
-                    ◻ Utilize media queries within the &ltstyle> tag to create responsive designs that adapt to different screen sizes. <br>
+                    ◻ Utilize media queries within the <span class="tag">&ltstyle></span> tag to create responsive designs that adapt to different screen sizes. <br>
                     ◻ Example:
                 </p>
                 <div class="codeblock">
                     <p class="comment">/* Resize window to see the effect */</p>
                     <pre class="htmlCode"></pre>
                     <div class="result">
-                        <style>
-                            @media (max-width: 768px) {
-                                .test{
-                                    background: burlywood;
-                                    color: brown;
-                                }
+                    <style>
+                        @media (max-width: 768px) {
+                            .test{
+                                background: burlywood;
+                                color: brown;
                             }
-                        </style>
+                        }
+                    </style>
                         
-                        <p class="test"> Resize to change color </p>
+                    <p class="test"> Resize to change color </p>
                     </div>
                 </div>
                 <p class="explanationTitle">
@@ -1019,7 +1016,7 @@
                     Comments:
                 </p>
                 <p>
-                    ◻ Add comments within the &ltstyle> tag to provide clarity on the purpose of specific styles or groups of styles. 
+                    ◻ Add comments within the <span class="tag">&ltstyle></span> tag to provide clarity on the purpose of specific styles or groups of styles. 
                 </p>
                 <p class="explanationTitle">
                     Avoid !important:
@@ -1031,7 +1028,7 @@
                     External Stylesheets:
                 </p>
                 <p>
-                    ◻ For larger projects, consider moving styles to an external stylesheet and linking it to the HTML file using the &ltlink> tag. This promotes maintainability and reusability. <br>
+                    ◻ For larger projects, consider moving styles to an external stylesheet and linking it to the HTML file using the <span class="tag">&ltlink></span> tag. This promotes maintainability and reusability. <br>
                     ◻ Example:
                 </p>
                 <div class="codeblock">
@@ -1047,8 +1044,263 @@
             </div>
             <!-- Style <style> -->
 
+            <!-- div tag start -->
+            <h4 class="subTitle" id="divtag">
+                🔴 Division &ltdiv> :
+            </h4>
+            <div class="explanation">
+                <p class="explanationTitle">Definition and Usage</p>
+                <p>
+                    The <span class="tag">&ltdiv></span> (division) tag in HTML is a container element used to group and structure content on a web page. It is a generic container that doesn't carry any specific semantic meaning but allows developers to apply styles, add classes, and manipulate the content within. Here's an explanation of the <span class="tag">&ltdiv></span> tag and some tips and tricks on how to use it effectively:   
+                </p>
+            </div>
+            <div class="codeblock">
+                <p class="comment">/* &ltstyle> tag */</p>
+                <pre class="htmlCode"></pre>
+                <div class="result">
+                    <div>
+                        div content
+                    </div>
+                </div>
+            </div>
+
+            <p class="explanationTitle">
+                Container Element:
+            </p>
+            <p>
+                ◻ '<span class="tag">&ltdiv></span>' is a block-level element that serves as a container for other HTML elements.
+            </p>
+            <p class="explanationTitle">
+                No Semantic Meaning:
+            </p>
+            <p>
+                ◻ '<span class="tag">&ltdiv></span>' itself doesn't convey any specific meaning or provide additional information about the content it wraps. It is a purely structural element.
+            </p>
+            <p class="explanationTitle">
+                Styling and Layout:
+            </p>
+            <p>
+                ◻ '<span class="tag">&ltdiv></span>' is commonly used to group and structure content for styling purposes. CSS styles can be applied to '<span class="tag">&ltdiv></span>' elements to control layout, spacing, and appearance.
+            </p>
+            <p class="explanationTitle">
+                JavaScript Manipulation:
+            </p>
+            <p>
+                ◻ JavaScript and jQuery often target '<span class="tag">&ltdiv></span>' elements for DOM manipulation. By assigning IDs or classes to '<span class="tag">&ltdiv></span>' elements, developers can easily select and manipulate specific sections of a page.
+            </p>
+            <p class="note">Most of the beginners think that '&ltdiv>' doesn't work because they can not visually see the element. So set some border to see the element <br>eg. border: 1px solid black;</p>
+            
+            <p class="explanationTitle">
+                ❕ &ltdiv> Tips & Tricks :
+            </p>
+            <p class="explanationTitle">
+                Semantic HTML First:
+            </p>
+            <p>
+                ◻ Whenever possible, use semantic HTML elements (like <span class="tag">&ltheader></span>, <span class="tag">&ltsection></span>, <span class="tag">&ltarticle></span>, <span class="tag">&ltnav></span>, etc.) to convey the meaning and structure of your content. Reserve <span class="tag">&ltdiv></span> for generic containers when no other semantic element fits.
+            </p>
+
+            <p class="explanationTitle">
+                Class and ID Attributes:
+            </p>
+            <p>
+                ◻ Use the 'class' and 'id' attributes to provide additional information about the purpose or styling of a <span class="tag">&ltdiv></span>. This makes it easier to style or select the element with CSS and JavaScript.
+            </p>
+            <div class="codeblock">
+                <p class="comment">/* Example */</p>
+                <pre class="htmlCode"></pre>
+                <div class="result">
+                    <div class="container"> 
+                        Container content
+                    </div>
+                      
+                    <div id="main-content"> 
+                        Main Content
+                    </div>
+                </div>
+            </div>
+
+            <p class="explanationTitle">
+                Nested <span class="tag">&ltdiv></span> Elements:
+            </p>
+            <p>
+                ◻ You can nest <span class="tag">'&ltdiv>'</span> elements to create hierarchies and further structure your content. This is especially useful for complex layouts.
+            </p>
+            <div class="codeblock">
+                <p class="comment">/* Example */</p>
+                <pre class="htmlCode"></pre>
+                <div class="result">
+                    <div class="parent"> 
+                        <div class="child1"> child 1 </div> 
+                        <div class="child2"> child 2 </div> 
+                    </div>
+                </div>
+            </div>
+
+            <p class="explanationTitle">
+                Clearfix for Floated Elements:
+            </p>
+            <p>
+                ◻ If you have floated elements within a <span class="tag">'&ltdiv>'</span> and want to ensure proper clearing, consider using a clearfix class in your CSS.
+            </p>
+            <div class="codeblock">
+                <p class="comment">/* Example */</p>
+                <pre class="htmlCode"></pre>
+                <div class="result">
+                    .clearfix::after {
+                        content: "";
+                        display: table;
+                        clear: both;
+                    }
+                </div>
+            </div>
+
+            <p class="explanationTitle">
+                Responsive Design:
+            </p>
+            <p>
+                ◻ <span class="tag">'&ltdiv>'</span> elements are commonly used in responsive design to create flexible and adaptive layouts. Utilize media queries and appropriate styles for different screen sizes.
+            </p>
+
+            <p class="explanationTitle">
+                Avoid Overuse:
+            </p>
+            <p>
+                ◻ While <span class="tag">'&ltdiv>'</span> is a versatile and powerful element, avoid unnecessary nesting or overusing it. Use semantic elements when they convey the meaning of your content more accurately.
+            </p>
+
+            <p class="explanationTitle">
+                Accessibility:
+            </p>
+            <p>
+                ◻ When structuring your content, consider accessibility. Ensure that the order of content makes sense for screen readers and other assistive technologies.
+            </p>
+
+            <p class="note">
+                Remember that while '&ltdiv>' is widely used, it's essential to use a combination of semantic HTML elements and '&ltdiv>' wisely to create well-structured, maintainable, and accessible web pages.
+            </p>
+
+            <!-- div tag end -->
+
+            <!-- span tag start -->
+            <h4 class="subTitle" id="spantag">
+                🔴 Span &ltspan> :
+            </h4>
+            <div class="explanation">
+                <p class="explanationTitle">Definition and Usage</p>
+                <p>
+                    The <span class="tag">&ltspan></span> tag is an inline HTML element used to apply styles or manipulate specific portions of text within a larger block of content without affecting the overall structure. It doesn't add any line breaks and is often used when you want to style a specific section of text within a paragraph or other block-level element.    
+                    <br>Here are some tips and tricks for using the <span class="tag">&ltspan></span> tag:
+                </p>
+            </div>
+
+            <p class="explanationTitle">
+                1. Styling Text:
+            </p>
+            <p>
+                ◻ Use <span class="tag">&ltspan></span> to apply styles such as color, font size, or font weight to specific words or characters.
+            </p>
+            
+            <div class="codeblock">
+                <pre class="htmlCode"></pre>
+                <div class="result"><p> This is <span style="color:blue;"> blue </span> text. </p> </div>
+            </div>
+
+            <p class="explanationTitle">
+                2. Inline CSS Classes:
+            </p>
+            <p>
+                ◻ Apply styles using inline CSS or refer to an external style sheet by assigning a class to the <span class="tag">&ltspan></span> element.
+            </p>
+            <div class="codeblock">
+                <pre class="htmlCode"></pre>
+                <div class="result"><p> This is <span class="highlight"> highlighted </span> text.</p></div>
+            </div>
+
+            <p class="explanationTitle">
+                3. JavaScript Manipulation:
+            </p>
+            <p>
+                ◻ Use JavaScript to dynamically manipulate the content within the <span class="tag">&ltspan></span> tag.
+            </p>
+            <div class="codeblock">
+                <pre class="htmlCode"></pre>
+                <div class="result">
+                    <p onclick="changeText()">Click <span id="clickMe"> here </span> . </p>
+
+                    <script>
+                    function changeText() {
+                        document.getElementById("clickMe").innerHTML = `${Math.floor(Math.random() * 10)}`;
+                    }
+                    </script>
+                </div>
+            </div>
+
+            <p class="explanationTitle">
+                4. Accessibility:
+            </p>
+            <p>
+                ◻ Ensure that any visual enhancements applied through <span class="tag">&ltspan></span> maintain accessibility. For example, using appropriate contrast for text color changes.
+            </p>
+
+            <p class="explanationTitle">
+                5. Nested Spans:
+            </p>
+            <p>
+                ◻ Nest <span class="tag">&ltspan></span> tags to apply multiple styles to different parts of the same text.
+            </p>
+            <div class="codeblock">
+                <pre class="htmlCode"></pre>
+                <div class="result">
+                    <p> 
+                        This is 
+                        <span class="bold"> 
+                            bold 
+                            <span class="italic"> 
+                                and italic 
+                            </span> 
+                        </span> 
+                        text. 
+                    </p>
+                </div>
+            </div>
+
+            <p class="explanationTitle">
+                6. Selective Styling in CSS:
+            </p>
+            <p>
+                ◻ Leverage the power of CSS to target <span class="tag">&ltspan></span> elements more efficiently.
+            </p>
+            <div class="codeblock">
+                <pre class="htmlCode"></pre>
+                <div class="result">
+                    span.highlight {
+                        background-color: yellow;
+                    }
+                </div>
+            </div>
+
+            <p class="explanationTitle">
+                7. Text Selection and Copy/Paste:
+            </p>
+            <p>
+                ◻ Be mindful that excessive use of <span class="tag">&ltspan></span> tags can affect text selection and copy/paste functionality. Avoid overusing for large blocks of content.
+            </p>
+
+            <p class="explanationTitle">
+                8. Semantic HTML:
+            </p>
+            <p>
+                ◻ Whenever possible, use semantic HTML elements (e.g., <span class="tag">&ltstrong></span>, <span class="tag">&ltem></span>) instead of <span class="tag">&ltspan></span> for better accessibility and maintainability.
+            </p>
+
+            <p class="note">
+                Remember that while &ltspan> is versatile, it's essential to use it judiciously, especially when considering maintainability, accessibility, and adherence to best coding practices.
+            </p>
+            <!-- span tag end-->
+
         </div>
-        <a class="goToTop" href="#listSectionTop">
+        <a class="goToTop" href="#spanTop">
             <span class="material-symbols-outlined">
                 arrow_upward
             </span>
