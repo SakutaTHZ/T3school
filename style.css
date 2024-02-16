@@ -15,6 +15,14 @@
     --whiteshadowcolor: rgba(255, 255, 255, 0.2);
     --secondary: rgb(90, 90, 247);
     --codeblockcolor: rgb(63, 63, 63);
+
+    --navcolor:rgba(0, 0, 0, 0.2);
+    --tagcolor:rgba(176, 80, 255);
+    --valuecolor:rgba(202, 190, 54);
+    --tipcolor:rgb(232, 157, 58);
+    --notecolor:rgb(69, 162, 255);
+    --attricolor:rgb(69, 162, 255);
+    --commentcolor:rgba(116, 172, 33, 0.75);
 }
 svg{
     position: fixed;
@@ -45,7 +53,7 @@ nav{
     inset: 0;
     width: 200px;
     height: 100dvh;
-    background: rgba(0, 0, 0, 0.2);
+    background: var(--navcolor);
 
     display: flex;
     justify-content: center;
@@ -139,6 +147,12 @@ nav>h3{
     display: flex;
     gap: 5px;
 }
+.bold{
+    font-weight: bolder;
+}
+.italic{
+    font-style: italic;
+}
 .topic {
     display: flex;
     margin-top: 0px;
@@ -151,6 +165,9 @@ nav>h3{
     gap: 9px;
     opacity: 0;
     overflow: hidden;
+}
+.htmlCode{
+    overflow-y: scroll;
 }
 
 .topicOpen {
@@ -270,6 +287,7 @@ section>.hamburger>a {
     display: flex;
     flex-direction: column;
     gap: 5px;
+    z-index: 100;
 }
 .subCat>a:first-child{
     justify-content: flex-end;
@@ -288,6 +306,7 @@ section>.hamburger>a {
     border-radius: 10px;
     border: 1px solid transparent;
     opacity: 1;
+    box-shadow: 0 0 10px var(--shadowcolor);
 }
 .subCat>a:hover{
     border: 1px solid white;
@@ -303,6 +322,7 @@ section>.hamburger>a {
 }
 .subCat>a:first-child{
     color: var(--fontcolor);
+    box-shadow: none;
 }
 .subCat>a:first-child:hover{
     border: 1px solid transparent;
@@ -355,29 +375,45 @@ section>.sectionContent {
     color: var(--fontcolor);
 }
 .tag {
-    color: rgb(176, 80, 255);
+    color: var(--tagcolor);
 }
 
 .value{
-    color: rgb(202, 190, 54);
+    color: var(--valuecolor);
 }
 .tip,.note{
-    background: rgb(232, 157, 58);
+    position: relative;
+    background: var(--tipcolor);
     color: var(--background);
     padding: 10px;
     border-radius: 10px;
     font-weight: 400;
+    margin-top: 15px;
+}
+.tip::before,.note::before{
+    content: 'Tip :';
+    position: absolute;
+    top: -18px;
+    left: 0;
+    border-radius: 5px 5px 0 0;
+    padding:3px 20px 3px 10px;
+    background: rgb(232, 157, 58);
+    font-weight: bold;
 }
 .note{
-    background: rgb(69, 162, 255);
+    background: var(--notecolor);
+}
+.note::before{
+    background: var(--notecolor);
+    content: 'Note :';
 }
 
 .attribute{
-    color: rgb(69, 162, 255);
+    color: var(--attricolor);
 }
 
 .comment{
-    color: rgba(116, 172, 33, 0.75);
+    color: var(--commentcolor);
     margin-bottom: 10px;
 }
 
@@ -449,6 +485,20 @@ section>.sectionContent {
     /* translate: 0px 0; */
 }
 /* light switch */
+
+.highlight{
+    color: var(--attricolor);
+    text-shadow: 0 0 10px var(--attricolor);
+    cursor: pointer;
+    animation: 3s highlight linear alternate infinite;
+}
+@keyframes highlight {
+    from{
+        filter: hue-rotate(0deg);
+    }to{
+        filter: hue-rotate(360deg);
+    }
+}
 
 @media screen and (min-width: 500px) {
     section>.sectionContent {
